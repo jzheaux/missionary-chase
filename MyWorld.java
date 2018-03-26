@@ -27,43 +27,53 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        House house19 = new House();
-        addObject(house19,463,125);
-
+        /*
         House house1 = new House();
         addObject(house1,100, 100);
 
         House house2 = new House();
-        addObject(house2,200, 100);
+        addObject(house2,225, 100);
 
         House house3 = new House();
-        addObject(house3,400, 100);
+        addObject(house3,225, 225);
 
         House house4 = new House();
-        addObject(house4,500, 100);
-
-        House house5 = new House();
-        addObject(house5,100, 200);
-
+        addObject(house4,100, 225);
+        
         House house6 = new House();
-        addObject(house6,100, 400);
+        addObject(house6,450, 100);
 
         House house7 = new House();
-        addObject(house7,100, 500);
+        addObject(house7,450, 225);
 
         House house8 = new House();
-        addObject(house8,200, 200);
+        addObject(house8,575, 100);
 
         House house9 = new House();
-        addObject(house9,700, 100);
+        addObject(house9,575, 225);
 
         House house10 = new House();
         addObject(house10,800, 100);
 
         House house11 = new House();
-        addObject(house11,700, 200);
-
-        house7.setLocation(182,462);
-        house8.setLocation(226,462);
+        addObject(house11,800, 225);
+        
+        House house12 = new House(); 
+        addObject(house12,800, 450);
+        
+        House house13 = new House(); 
+        addObject(house13,800, 550);
+        */
+        int numberOfHouses = Greenfoot.getRandomNumber(4) + 2;
+        for ( int i = 0; i < numberOfHouses; i++ ) {
+            int x = Greenfoot.getRandomNumber(150) + 100;
+            int y = Greenfoot.getRandomNumber(150) + 100;
+            House h = new House();
+            addObject(h, x, y);
+            if ( h.isTouching(House.class) ) {
+                removeObject(h);
+            }
+        }
     }
+
 }

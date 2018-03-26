@@ -15,5 +15,9 @@ public class House extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+    }   
+    
+    public boolean isTouching(Class<?> clazz) {
+        return super.isTouching(clazz);
+    }
 }
